@@ -9,17 +9,17 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'scary_demo'
+BOT_NAME = 'scrapy_demo'
 
-SPIDER_MODULES = ['scary_demo.spiders']
-NEWSPIDER_MODULE = 'scary_demo.spiders'
+SPIDER_MODULES = ['scrapy_demo.spiders']
+NEWSPIDER_MODULE = 'scrapy_demo.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-ITEM_PIPELINES = {'scary_demo.pipelines.ScaryDemoPipeline':300}
+ITEM_PIPELINES = {'scrapy_demo.pipelines.ScaryDemoPipeline':300}
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

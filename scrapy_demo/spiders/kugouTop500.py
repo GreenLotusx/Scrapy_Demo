@@ -1,6 +1,6 @@
 from scrapy.spiders import CrawlSpider
 from scrapy.selector import Selector
-from scary_demo.items import kugouTop500Item
+from scrapy_demo.items import kugouTop500Item
 from scrapy.http import Request
 
 class kugouTop500(CrawlSpider):
@@ -8,7 +8,7 @@ class kugouTop500(CrawlSpider):
 	start_urls = ['http://www.kugou.com/yy/rank/home/1-8888.html?from=rank']
 
 	def parse(self,response):
-		item = ScaryDemoItem()
+		item = kugouTop500Item()
 		selector = Selector(response)
 		infos = selector.xpath('//*[@class="pc_temp_songlist "]/ul/li')
 		for info in infos:
@@ -31,5 +31,6 @@ class kugouTop500(CrawlSpider):
 																						##构建页面url
 		urls = ['http://www.kugou.com/yy/rank/home/{}-8888.html?from=rank'.format(str(x)) 
 			for x in range(2,24)]
+		urls.reverse()
 		for url in urls:
 			yield Request(url,callback=self.parse)

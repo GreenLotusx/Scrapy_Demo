@@ -1,6 +1,6 @@
 from scrapy.spiders import CrawlSpider
 from scrapy.selector import Selector
-from scary_demo.items import zhuantiItem
+from scrapy_demo.items import zhuantiItem
 from scrapy.http import Request
 
 class jianshuZhuanti(CrawlSpider):
